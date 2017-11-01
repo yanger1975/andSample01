@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnTest_onClick(View v)
     {
-        txtView.setText("Welcome");
-        Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show();
+        txtView.setText(R.string.STR_WELCOME);
+        Toast.makeText(this, R.string.STR_HELLO, Toast.LENGTH_LONG).show();
     }
 
     public void btnAlert_onClick(View v)
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         //builder.setIcon(R.drawable.)
         builder.setTitle("Alert");
-        builder.setPositiveButton("OK", null);
-        builder.setNeutralButton("Cancel", null);
+        builder.setPositiveButton(R.string.STR_OK, null);
+        builder.setNeutralButton(R.string.STR_CANCEL, null);
         builder.setMessage("Test Alert");
         builder.show();
     }
@@ -84,5 +84,30 @@ public class MainActivity extends AppCompatActivity {
     public void editNum1_onClick(View view) {
         EditText editText = (EditText) view;
         editText.setText("");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

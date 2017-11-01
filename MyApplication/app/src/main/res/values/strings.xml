@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">App01</string>
+    <string name="STR_WELCOME">Welcome</string>
+    <string name="STR_HELLO">Hello</string>
+    <string name="STR_OK">OK</string>
+    <string name="STR_CANCEL">Cancel</string>
+    <string name="alert">STR_ALERT</string>
+    <string name="STR_ALERT">ALERT</string>
 </resources>
