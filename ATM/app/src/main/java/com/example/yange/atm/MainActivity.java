@@ -6,16 +6,26 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
     boolean isLoggedIn = false;
     public static int FUNC_LOGIN = 1;
+    ListView listViewMain;
+    String funcs[] = {"Savings", "Transactions", "News", "Logout"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listViewMain = (ListView) findViewById(R.id.ListViewMain);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, funcs);
+        listViewMain.setAdapter(adapter);
+
 
         if (!isLoggedIn) {
             Intent intent = new Intent(this, LoginActivity.class);
@@ -42,5 +52,11 @@ public class MainActivity extends AppCompatActivity {
         }
         else
             finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
